@@ -3,15 +3,18 @@ import java.util.Arrays;
 public class SumaParImp {
     public static void main(String[] args) {
         //Escribe un programa que recorra un array de enteros y calcule la suma de los números pares y la suma de los impares por separado.
-
-        int[] arr1 = {1, 2, 3, 4, 5, 6};
-
+        
+        int[] arr1 = {1, 3, 2, 5, 4, 6};
+        
         int[] fn = sumaParImp(arr1);
-
+        
         int pares = fn[0];
         int impares = fn[1];
-
+        
         System.out.printf("Para el array %s, la suma de pares es %s y la de impares es %s", Arrays.toString(arr1), pares, impares );
+        
+        // Sumas result = sumaParesImpares(arr1);
+        // System.out.println(Arrays.toString(arr1), result.getPares(), result.getImpares());
     }
 
     public static int[] sumaParImp(int[] arr1) {
@@ -35,5 +38,40 @@ public class SumaParImp {
         return valores;
         
     }
+
+    // public static Sumas sumaParesImpares(int[] arr1) {
+    //     Sumas sum = new Sumas();
+
+    //     for (int i = 0; i < arr1.length; i++) {
+    //         if (arr1[i] % 2 == 0) {
+    //             sum.setPares(sum.getPares() + arr1[i]);
+    //         }
+
+    //         if (arr1[i] % 2 != 0) {
+    //             sum.setImpares(sum.getImpares() + arr1[i]);   
+    //         }
+    //     }
+    //     return sum;
+    // }
     
 }
+
+// class Sumas {
+//     private int pares = 0, impares = 0;
+
+//     public int getPares() {
+//         return pares;
+//     }
+
+//     public void setPares(int pares) {
+//         this.pares = pares;
+//     }
+
+//     public int getImpares() {
+//         return impares;
+//     }
+
+//     public void setImpares(int impares) {
+//         this.impares = impares;
+//     }
+// }
