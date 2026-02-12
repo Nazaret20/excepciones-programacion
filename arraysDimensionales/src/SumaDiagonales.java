@@ -1,4 +1,5 @@
-import java.util.Arrays;
+
+import java.util.Random;
 import java.util.Scanner;
 
 public class SumaDiagonales {
@@ -15,14 +16,47 @@ public class SumaDiagonales {
         Scanner sc = new Scanner(System.in);
 
         int[][] fn = pedirArrayInt(sc);
-        System.out.println(Arrays.toString(fn[filas][col]));
+        int sumaDiagonalP = sumaMatrizP(fn);
+        int sumaDiagonalS = sumaMatrizS(fn);
 
-        
+        for (int i = 0; i < fn.length; i++) {
+            for (int j = 0; j < fn[i].length; j++) {
+                System.out.print(fn[i][j] + " ");
+            }
+            System.out.println();
+        }
+
+        System.out.printf("La diagonal principal es %d, y la secundaria es %d", sumaDiagonalP, sumaDiagonalS);
     }
 
-    // public static int sumaMatriz(int[][] arr) {
+    public static int sumaMatrizP(int[][] arr) {
+        int temp = 0;
 
-    // }
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < arr[i].length; j++) {
+
+                if (arr[i] == arr[j]) {
+                    temp += arr[i][j];
+                }
+            }
+
+        }
+        return temp;
+    }
+
+    public static int sumaMatrizS(int[][] arr) {
+        int temp = 0;
+
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < arr[i].length; j++) {
+                if (j == arr.length - 1 - i) {
+                    temp += arr[i][j];
+                }
+            }
+        }
+
+        return temp;
+    }
 
     public static int[][] pedirArrayInt(Scanner sc) {
         System.out.print("Dime las filas de array que me vas dar: ");
@@ -31,6 +65,15 @@ public class SumaDiagonales {
         int col = Integer.parseInt(sc.nextLine());
 
         int[][] numeros = new int[filas][col];
+
+        Random random = new Random();
+
+        for (int i = 0; i < numeros.length; i++) {
+            for (int j = 0; j < numeros[i].length; j++) {
+                int num = random.nextInt(10);
+                numeros[i][j] = num;
+            }
+        }
 
         return numeros;
     }
