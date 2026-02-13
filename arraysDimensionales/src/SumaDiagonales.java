@@ -16,17 +16,13 @@ public class SumaDiagonales {
         Scanner sc = new Scanner(System.in);
 
         int[][] fn = pedirArrayInt(sc);
+        imprimirMatriz(fn);
         int sumaDiagonalP = sumaMatrizP(fn);
         int sumaDiagonalS = sumaMatrizS(fn);
-
-        for (int i = 0; i < fn.length; i++) {
-            for (int j = 0; j < fn[i].length; j++) {
-                System.out.print(fn[i][j] + " ");
-            }
-            System.out.println();
-        }
-
         System.out.printf("La diagonal principal es %d, y la secundaria es %d", sumaDiagonalP, sumaDiagonalS);
+
+        sc.close();
+        
     }
 
     public static int sumaMatrizP(int[][] arr) {
@@ -68,13 +64,22 @@ public class SumaDiagonales {
 
         Random random = new Random();
 
-        for (int i = 0; i < numeros.length; i++) {
-            for (int j = 0; j < numeros[i].length; j++) {
+        for (int i = 0; i < filas; i++) {
+            for (int j = 0; j < col; j++) {
                 int num = random.nextInt(10);
                 numeros[i][j] = num;
             }
         }
 
         return numeros;
+    }
+
+    public static void imprimirMatriz(int[][] numeros) {
+        for (int i = 0; i < numeros.length; i++) {
+            for (int j = 0; j < numeros[i].length; j++) {
+                System.out.printf("%3d", numeros[i][j]);
+            }
+            System.out.println();
+        }
     }
 }
