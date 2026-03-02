@@ -1,6 +1,6 @@
 import java.util.Arrays;
 
-public class App {
+public class EjercicioBingo {
     public static void main(String[] args) throws Exception {
      
         //1. Crear un array para almacenar los números que han salido
