@@ -15,28 +15,25 @@ public class Islas {
          * 1 1 0 0
          */
 
-        int[][] mapa = {{0, 1, 1, 0}, {0, 1, 0, 1}, {1, 0, 0, 1},{1, 1, 0, 0}};
+        int[][] mapa = { { 0, 1, 1, 0 }, { 0, 1, 0, 1 }, { 1, 0, 0, 1 }, { 1, 1, 0, 0 } };
 
         int cuantos = unosPorFila(mapa);
         System.out.println(cuantos);
-        
+
     }
 
-    public static int unosPorFila(int[][] mapa) {
-       int contador = 0;
-        
-        for (int i = 0; i < mapa.length; i++) {
-            for (int j = 1; j < mapa[i].length - 1; j++) {
-                if (mapa[i][j - 1] == 1 || mapa[i][j] == 1 || mapa[i][j + 1] == 1) {
-                    contador++;
-                } 
-            }
-            System.out.println("En la línea " + mapa[i] + " hay " + contador);
-            
-        }
-        
+    public static int cambiarA0(int[][] mapa) {
+        int contador = 0;
 
+        for (int i = 0; i < mapa.length; i++) {
+            for (int j = 0; j < mapa[i].length; j++) {
+                if (mapa[i][j] == 1) {
+                    contador++;
+                }
+            }
+
+        }
         return contador;
-        
+
     }
 }
