@@ -60,8 +60,8 @@ public class ListaMercado {
                 System.out.println();
             }
         } while (categorias.containsKey(categoria));
-        
-        categorias.put(categoria, new ArrayList<>());
+           
+        categorias.put(categoria, new ArrayList<String>());
         System.out.println("\nCategoría añadida correctamente");
       
         return categorias;
