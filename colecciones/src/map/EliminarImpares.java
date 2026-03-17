@@ -20,11 +20,8 @@ public class EliminarImpares {
         ArrayList<Integer> listaPares = new ArrayList<>();
 
         for (Integer num : listaNums) {
-            if (num % 2 != 0) {
-                num = 0;
+            if (num % 2 == 0) {
                 //listaNums.remove(num);
-
-            } else {
                 listaPares.add(num);
             }
         }
